@@ -1,34 +1,45 @@
 export interface User {
+  id: string;
   login: string;
-  id: number;
-  node_id: string;
-  avatar_url: string;
-  gravatar_id: string;
-  url: string;
-  html_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  starred_url: string;
-  subscriptions_url: string;
-  organizations_url: string;
-  repos_url: string;
-  events_url: string;
-  received_events_url: string;
-  type: string;
-  site_admin: boolean;
   name: string;
-  company?: any;
-  blog: string;
+  email: string;
+  avatarUrl: string;
   location: string;
-  email?: any;
-  hireable?: any;
-  bio?: any;
-  twitter_username?: any;
-  public_repos: number;
-  public_gists: number;
-  followers: number;
-  following: number;
-  created_at: Date;
-  updated_at: Date;
+  bio: string;
+  createdAt: Date;
+  contributionsCollection: ContributionsCollection;
+  __typename: string;
 }
+interface ContributionDay {
+  weekday: number;
+  date: string;
+  contributionCount: number;
+  color: string;
+  __typename: string;
+}
+
+interface Week {
+  contributionDays: ContributionDay[];
+  __typename: string;
+}
+
+interface Month {
+  name: string;
+  year: number;
+  firstDay: string;
+  totalWeeks: number;
+  __typename: string;
+}
+
+interface ContributionCalendar {
+  totalContributions: number;
+  weeks: Week[];
+  months: Month[];
+  __typename: string;
+}
+
+export interface ContributionsCollection {
+  contributionCalendar: ContributionCalendar;
+  __typename: string;
+}
+

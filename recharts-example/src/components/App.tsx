@@ -1,25 +1,16 @@
-import { useQuery } from '@apollo/client';
-import { CONTRIBUTIONS } from '../api/github';
-import { User } from '../interface';
-import Contributions from './Contributions';
+import { useState } from 'react';
 import Form from './Form';
-import Profile from './Profile';
+import Section from './Section';
 
-type AppProps = {
-  user: User;
-  getUser: (nickname: string) => Promise<void>;
-}
-
-function App(props: AppProps) {
-  const {user, getUser} = props;
+function App() {
+  const [nickname, setNickname] = useState('');
 
   return (
     <div className="main">
-      <Form getUser={getUser}/>
-      {user.id ? <Profile user={user}/> : null}
-      {user.id ? <Contributions user={user}/> : null}
+      <Form setNickname={setNickname} />
+      {nickname ? <Section nickname={nickname} /> : null}
     </div>
-  )
+  );
 }
 
 export default App;

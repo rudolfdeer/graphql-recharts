@@ -1,13 +1,11 @@
-import { useQuery } from '@apollo/client';
 import { Dispatch, SetStateAction, useState } from 'react';
-import { CONTRIBUTIONS } from '../api/github';
 
 type FormProps = {
-  getUser: (nickname: string) => void;
+  setNickname: Dispatch<SetStateAction<string>>;
 };
 
 export default function Form(props: FormProps) {
-  const { getUser } = props;
+  const { setNickname } = props;
   const [value, setValue] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -16,7 +14,7 @@ export default function Form(props: FormProps) {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    getUser(value);
+    setNickname(value);
   };
 
   return (

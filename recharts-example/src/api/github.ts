@@ -4,10 +4,10 @@ import {
   gql,
   HttpLink
 } from "@apollo/client";
-import { GRAPHQL_ENDPOUNT } from '../constants/api';
 import { setContext } from "@apollo/client/link/context";
 
-const TOKEN = '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'
+const TOKEN = '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';
+const GRAPHQL_ENDPOUNT = 'https://api.github.com/graphql';
 
 const authLink = setContext((_, { headers }) => {
   return {
