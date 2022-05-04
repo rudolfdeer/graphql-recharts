@@ -4,14 +4,12 @@ type ProfileProps = {
   user: User;
 };
 
-export default function Profile(props: ProfileProps) {
-  const { user } = props;
-
+export default function Profile({ user }: ProfileProps) {
   return (
     <section className="profile">
       <img alt="User avatar" className="profile__avatar" src={user.avatarUrl} />
       <div className="profile__name">
-        <a href={`https://github.com/${user.login}`} target="_blank">
+        <a href={`https://github.com/${user.login}`} target="_blank" rel="noopener noreferrer">
           {user.name ? user.name : user.login}
         </a>
       </div>

@@ -4,8 +4,6 @@ type ContributionsProps = {
   collection: ContributionsCollection;
 };
 
-export default function Contributions(props: ContributionsProps) {
-  const { collection } = props;
-
+export default function Contributions({ collection }: ContributionsProps) {
   return <div className="contributions">{collection.__typename}</div>;
 }

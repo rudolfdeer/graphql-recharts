@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="main">
       <Form setNickname={setNickname} />
-      {nickname ? <Section nickname={nickname} /> : null}
+      {nickname && <Section nickname={nickname} />}
     </div>
   );
 }

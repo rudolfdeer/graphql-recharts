@@ -4,8 +4,7 @@ type FormProps = {
   setNickname: Dispatch<SetStateAction<string>>;
 };
 
-export default function Form(props: FormProps) {
-  const { setNickname } = props;
+export default function Form({ setNickname }: FormProps) {
   const [value, setValue] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
