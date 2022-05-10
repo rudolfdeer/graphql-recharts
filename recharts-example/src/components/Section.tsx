@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import { Box, CircularProgress } from '@mui/material';
 import { CONTRIBUTIONS } from '../api/github';
-import Contributions from './Contributions';
+import Chart from './Chart';
 import Profile from './Profile';
 
 type SectionProps = {
@@ -35,7 +35,7 @@ export default function Section({ nickname }: SectionProps) {
   return (
     <>
       <Profile user={data.user} />
-      <Contributions collection={data.user.contributionsCollection} />
+      <Chart collection={data.user.contributionsCollection} />
     </>
   );
 }
