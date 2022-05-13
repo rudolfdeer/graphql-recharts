@@ -1,5 +1,5 @@
 {
-  "name": "recharts-example",
+  "name": "graphql-recharts",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
