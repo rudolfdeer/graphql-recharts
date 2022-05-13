@@ -1,4 +1,3 @@
-import { ContributionsCollection } from '../interface';
 import {
   LineChart,
   Line,
@@ -6,27 +5,15 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from 'recharts';
 import { Box } from '@mui/material';
 import { useEffect, useState } from 'react';
+import { ContributionsCollection } from '../interface';
 
 type ChartProps = {
   collection: ContributionsCollection;
 };
-
-//name
-//uv
-//amt
-//contributionCalendar: totalContributions: 201, weeks: [{contributionDays: [{color: "#9be9a8"
-// contributionCount: 3
-// date: "2021-04-28"
-// weekday: 3}]
-//month: [{firstDay: "2021-04-01"
-// name: "Apr"
-// totalWeeks: 1
-// year: 2021}]
 
 type ChartElement = {
   name: string;
@@ -61,7 +48,7 @@ export default function Chart({ collection }: ChartProps) {
   }, [collection]);
 
   return (
-    <>
+    <section className="chart">
       <ResponsiveContainer width="100%" height={400}>
         <LineChart
           width={500}
@@ -78,7 +65,6 @@ export default function Chart({ collection }: ChartProps) {
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
-          {/* <Legend /> */}
           <Line
             type="monotone"
             dataKey="contributions"
@@ -95,6 +81,7 @@ export default function Chart({ collection }: ChartProps) {
         Total number of contributions:{' '}
         {collection.contributionCalendar.totalContributions}
       </Box>
-    </>
+      </section>
+    
   );
 }

@@ -7,6 +7,11 @@
   color: black;
 }
 
+#root {
+  display: flex;
+  justify-content: center;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -23,6 +28,7 @@ img {
 
 .main {
   max-width: 1200px;
+  width: 100%;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -84,5 +90,17 @@ img {
   &__location {
     font-size: 16px;
     margin-bottom: 10px;
+  }
+}
+
+.chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  div {
+    display: flex;
+    justify-content: center;
   }
 }
