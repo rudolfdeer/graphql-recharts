@@ -6,10 +6,10 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-} from "recharts";
-import { Box } from "@mui/material";
-import { useEffect, useState } from "react";
-import { ContributionsCollection } from "../interface";
+} from 'recharts';
+import { Box } from '@mui/material';
+import { useEffect, useState } from 'react';
+import { ContributionsCollection } from '../interface';
 
 type ChartProps = {
   collection: ContributionsCollection;
@@ -75,10 +75,10 @@ export default function Chart({ collection }: ChartProps) {
       </ResponsiveContainer>
       <Box
         sx={{
-          fontSize: "16px",
+          fontSize: '16px',
         }}
       >
-        Total number of contributions:{" "}
+        Total number of contributions:{' '}
         {collection.contributionCalendar.totalContributions}
       </Box>
     </section>

@@ -1,11 +1,11 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useState } from 'react';
 
 type FormProps = {
   setNickname: Dispatch<SetStateAction<string>>;
 };
 
 export default function Form({ setNickname }: FormProps) {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);

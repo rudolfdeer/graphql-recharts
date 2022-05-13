@@ -1,4 +1,4 @@
-import { User } from "../interface";
+import { User } from '../interface';
 
 type ProfileProps = {
   user: User;

@@ -1,8 +1,9 @@
-import { ApolloClient, InMemoryCache, gql, HttpLink } from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
+import { ApolloClient, InMemoryCache, gql, HttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import { GET_USER_QUERY } from './queries';
 
 const TOKEN = process.env.REACT_APP_TOKEN;
-const GRAPHQL_ENDPOINT = "https://api.github.com/graphql";
+const GRAPHQL_ENDPOINT = 'https://api.github.com/graphql';
 
 const authLink = setContext((_, { headers }) => {
   return {
@@ -20,37 +21,6 @@ export const client = new ApolloClient({
 
 export const CONTRIBUTIONS = gql`
   query User($nickname: String!) {
-    user(login: $nickname) {
-      id
-      login
-      name
-      email
-      avatarUrl
-      location
-      bio
-      createdAt
-      contributionsCollection(
-        from: "2021-04-28T00:00:00Z"
-        to: "2022-04-28T00:00:00Z"
-      ) {
-        contributionCalendar {
-          totalContributions
-          weeks {
-            contributionDays {
-              weekday
-              date
-              contributionCount
-              color
-            }
-          }
-          months {
-            name
-            year
-            firstDay
-            totalWeeks
-          }
-        }
-      }
-    }
+    ${GET_USER_QUERY}
   }
 `;

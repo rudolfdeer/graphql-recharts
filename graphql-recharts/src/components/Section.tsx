@@ -1,8 +1,8 @@
-import { useQuery } from "@apollo/client";
-import { Box, CircularProgress } from "@mui/material";
-import { CONTRIBUTIONS } from "../api/github";
-import Chart from "./Chart";
-import Profile from "./Profile";
+import { useQuery } from '@apollo/client';
+import { Box, CircularProgress } from '@mui/material';
+import { CONTRIBUTIONS } from '../api/github';
+import Chart from './Chart';
+import Profile from './Profile';
 
 type SectionProps = {
   nickname: string;
@@ -10,7 +10,7 @@ type SectionProps = {
 
 export default function Section({ nickname }: SectionProps) {
   const { loading, error, data } = useQuery(CONTRIBUTIONS, {
-    fetchPolicy: "no-cache",
+    fetchPolicy: 'no-cache',
     variables: { nickname },
   });
 
@@ -18,11 +18,11 @@ export default function Section({ nickname }: SectionProps) {
     return (
       <Box
         sx={{
-          display: "flex",
-          width: "100%",
-          justifyContent: "center",
-          height: "100vh",
-          alignItems: "center",
+          display: 'flex',
+          width: '100%',
+          justifyContent: 'center',
+          height: '100vh',
+          alignItems: 'center',
         }}
       >
         <CircularProgress />
