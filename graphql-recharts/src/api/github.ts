@@ -1,8 +1,8 @@
-import { ApolloClient, InMemoryCache, gql, HttpLink } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
+import { ApolloClient, InMemoryCache, gql, HttpLink } from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
 
 const TOKEN = process.env.REACT_APP_TOKEN;
-const GRAPHQL_ENDPOINT = 'https://api.github.com/graphql';
+const GRAPHQL_ENDPOINT = "https://api.github.com/graphql";
 
 const authLink = setContext((_, { headers }) => {
   return {

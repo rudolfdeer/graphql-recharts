@@ -42,4 +42,3 @@ export interface ContributionsCollection {
   contributionCalendar: ContributionCalendar;
   __typename: string;
 }
-

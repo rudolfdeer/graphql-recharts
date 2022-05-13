@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import Form from './Form';
-import Section from './Section';
+import { useState } from "react";
+import Form from "./Form";
+import Section from "./Section";
 
 function App() {
-  const [nickname, setNickname] = useState('');
+  const [nickname, setNickname] = useState("");
 
   return (
     <div className="main">
