@@ -9,7 +9,7 @@ type SectionProps = {
 };
 
 export default function Section({ nickname }: SectionProps) {
-  const { loading, error, data, refetch } = useQuery(CONTRIBUTIONS, {
+  const { loading, error, data } = useQuery(CONTRIBUTIONS, {
     fetchPolicy: 'no-cache',
     variables: { nickname },
   });
