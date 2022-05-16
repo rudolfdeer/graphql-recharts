@@ -17,10 +17,10 @@ export default function Profile({ user }: ProfileProps) {
           {user.name ? user.name : user.login}
         </a>
       </div>
-      {user.location ? (
+      {user.location && (
         <div className="profile__location">{user.location}</div>
-      ) : null}
-      {user.bio ? <div className="profile__bio">{user.bio}</div> : null}
+      )}
+      {user.bio && <div className="profile__bio">{user.bio}</div>}
     </section>
   );
 }
